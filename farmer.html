@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KrishiConnect - Farmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container role-page farmer-theme">
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+    <header class="page-header">
+      <span class="role-badge farmer">Farmer</span>
+      <h1 class="app-title small">Farmer Dashboard</h1>
+      <p class="subtitle small">
+        Create your profile, post vacancies, view applications and chat with labourers.
+      </p>
+    </header>
+
+    <!-- Farmer Profile -->
+    <section class="card shadow profile-card">
+      <div class="card-header">
+        <h2>👨‍🌾 My Farmer Profile</h2>
+        <span id="profileStatus" class="status-pill secondary">Not saved</span>
+      </div>
+
+      <form id="farmerProfileForm">
+        <div class="form-group">
+          <label for="fpName">Name</label>
+          <input type="text" id="fpName" placeholder="e.g., Ramesh Patel" required>
+        </div>
+        <div class="form-group">
+          <label for="fpCity">City / Village</label>
+          <input type="text" id="fpCity" placeholder="e.g., Guntur" required>
+        </div>
+        <div class="form-group">
+          <label for="fpContact">Contact Number</label>
+          <input type="tel" id="fpContact" placeholder="e.g., 9876543210" required>
+        </div>
+        <div class="form-group">
+          <label for="fpExperience">Experience in Farming (Years)</label>
+          <input type="number" id="fpExperience" min="0" placeholder="e.g., 10">
+        </div>
+
+        <button type="submit" class="main-btn farmer-btn full-width">
+          Save Profile
+        </button>
+      </form>
+
+      <button type="button" id="viewFarmerProfile" class="secondary-btn full-width" style="margin-top:10px;">
+        View My Profile
+      </button>
+
+      <div id="farmerProfileView" class="farmer-profile-box" style="display:none; margin-top:10px;"></div>
+
+      <p id="profileSavedMsg" class="success-message" style="display:none;">
+        ✅ Profile saved! Your details will be attached to every vacancy.
+      </p>
+    </section>
+
+    <!-- Post Vacancy -->
+    <section class="card shadow">
+      <div class="card-header">
+        <h2>🌾 Post Work Requirement</h2>
+        <span class="hint-text">
+          Labourers can apply and you will receive applications & chat options below.
+        </span>
+      </div>
+
+      <form id="farmerVacancyForm">
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="workType">Work Type</label>
+            <select id="workType" required>
+              <option value="">-- Select Work Type --</option>
+              <option value="Sowing">Sowing</option>
+              <option value="Harvesting">Harvesting</option>
+              <option value="Irrigation">Irrigation</option>
+              <option value="Fertilizing">Fertilizing</option>
+              <option value="Weeding">Weeding</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group half">
+            <label for="numWorkers">Number of Labourers Required</label>
+            <input type="number" id="numWorkers" min="1" placeholder="e.g., 5" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="location">Work Location</label>
+            <input type="text" id="location" placeholder="e.g., Guntur fields" required>
+          </div>
+          <div class="form-group half">
+            <label for="date">Work Date</label>
+            <input type="date" id="date">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Extra Details (optional)</label>
+          <textarea id="notes" rows="2" placeholder="e.g., Need workers for paddy harvesting in the morning."></textarea>
+        </div>
+
+        <button type="submit" class="main-btn farmer-btn full-width">
+          Post Vacancy
+        </button>
+      </form>
+
+      <p id="vacancySuccessMessage" class="success-message" style="display:none;">
+        ✅ Vacancy posted! Labourers can now apply and chat with you.
+      </p>
+    </section>
+
+    <!-- Applications & Chats -->
+    <section class="card shadow">
+      <div class="card-header">
+        <h2>🔔 Applications & Chats</h2>
+        <span class="hint-text">
+          See who applied for your vacancies and open chats.
+        </span>
+      </div>
+
+      <div id="farmerApplications" class="list-container"></div>
+
+      <p id="farmerNoAppsMessage" class="info-message" style="display:none;">
+        No applications yet. Labourers will appear here after they apply.
+      </p>
+    </section>
+
+  </div>
+
+  <script src="farmer.js"></script>
+</body>
+</html>

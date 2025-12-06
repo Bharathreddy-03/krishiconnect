@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KrishiConnect - Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container chat-page">
+    <a href="javascript:history.back()" class="back-link">&larr; Back</a>
+
+    <header class="card shadow chat-header">
+      <div id="chatTitle" class="chat-title">Chat</div>
+      <div id="chatSubtitle" class="chat-subtitle"></div>
+    </header>
+
+    <section class="card shadow chat-window">
+      <div id="chatMessages" class="chat-messages"></div>
+      <form id="chatForm" class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+        <button type="submit" class="main-btn labour-btn chat-send-btn">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

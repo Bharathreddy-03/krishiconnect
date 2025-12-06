@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KrishiConnect - Labour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container role-page labour-theme">
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+    <header class="page-header">
+      <span class="role-badge labour">Labour</span>
+      <h1 class="app-title small">Labour Dashboard</h1>
+      <p class="subtitle small">
+        Create your profile, search work, apply to vacancies and chat with farmers.
+      </p>
+    </header>
+
+    <!-- Labour Profile -->
+    <section class="card shadow profile-card">
+      <div class="card-header">
+        <h2>👷‍♂ My Labour Profile</h2>
+        <span id="labourProfileStatus" class="status-pill secondary">Not saved</span>
+      </div>
+
+      <form id="labourProfileForm">
+        <div class="form-group">
+          <label for="lpName">Name</label>
+          <input type="text" id="lpName" placeholder="e.g., Sita Devi" required>
+        </div>
+        <div class="form-group">
+          <label for="lpCity">City / Village</label>
+          <input type="text" id="lpCity" placeholder="e.g., Guntur" required>
+        </div>
+        <div class="form-group">
+          <label for="lpSkills">Skills (comma separated)</label>
+          <input type="text" id="lpSkills" placeholder="e.g., harvesting, sowing, irrigation">
+        </div>
+        <div class="form-group">
+          <label for="lpExperience">Experience (Years)</label>
+          <input type="number" id="lpExperience" min="0" placeholder="e.g., 3">
+        </div>
+        <div class="form-group">
+          <label for="lpContact">Contact Number</label>
+          <input type="tel" id="lpContact" placeholder="e.g., 9876543210" required>
+        </div>
+
+        <button type="submit" class="main-btn labour-btn full-width">
+          Save Labour Profile
+        </button>
+      </form>
+
+      <button type="button" id="viewLabourProfile" class="secondary-btn full-width" style="margin-top:10px;">
+        View My Profile
+      </button>
+
+      <div id="labourProfileView" class="farmer-profile-box" style="display:none; margin-top:10px;"></div>
+
+      <p id="labourProfileSavedMsg" class="success-message" style="display:none;">
+        ✅ Profile saved! You can now apply for jobs and chat with farmers.
+      </p>
+    </section>
+
+    <!-- Search Work -->
+    <section class="card shadow">
+      <div class="card-header">
+        <h2>🔍 Find Work</h2>
+        <span class="hint-text">
+          Search for vacancies in your city and apply directly.
+        </span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group three-fourth">
+          <label for="searchCity">Enter City / Village</label>
+          <input type="text" id="searchCity" placeholder="e.g., Guntur">
+        </div>
+        <div class="form-group one-fourth">
+          <label>&nbsp;</label>
+          <button id="searchBtn" class="main-btn labour-btn full-width">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vacancies -->
+    <section>
+      <h2 class="section-title">Available Vacancies</h2>
+      <div id="vacancyList" class="list-container"></div>
+      <p id="noDataMessage" class="info-message" style="display:none;">
+        No vacancies found for this city. Try another city or check later.
+      </p>
+    </section>
+
+    <!-- My Applications & Chats -->
+    <section class="card shadow" style="margin-top:18px;">
+      <div class="card-header">
+        <h2>📩 My Applications & Chats</h2>
+        <span class="hint-text">
+          See where you applied and continue chatting with farmers.
+        </span>
+      </div>
+
+      <div id="labourApplications" class="list-container"></div>
+
+      <p id="labourNoAppsMessage" class="info-message" style="display:none;">
+        You haven't applied to any vacancies yet. Apply to start chatting.
+      </p>
+    </section>
+
+  </div>
+
+  <script src="labour.js"></script>
+</body>
+</html>
